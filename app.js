@@ -17,7 +17,7 @@ if (!localStorage.work) {
 }
 
 (() => {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Paris&APPID=' + API_KEY_WEATHER +'&units=metric')
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Paris&APPID=${API_KEY_WEATHER}&units=metric`)
         .then(res => res.json())
         .then((data) => {
             if (data.cod === "200") {
@@ -36,7 +36,7 @@ if (!localStorage.work) {
 })();
 
 (() => {
-    fetch('https://newsapi.org/v2/top-headlines?country=fr&apiKey=' + API_KEY_NEWS)
+    fetch(`https://newsapi.org/v2/top-headlines?country=fr&apiKey=${API_KEY_NEWS}`)
         .then(res => res.json())
         .then((data) => {
             if (data.status === "ok") {
